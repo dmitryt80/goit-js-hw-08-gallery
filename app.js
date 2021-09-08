@@ -146,3 +146,18 @@ function closeModal(e) {
 
   window.removeEventListener('keydown', onKeyDown);
 }
+
+function onKeyDown(e) {
+  if (!modal.classList.contains('is-open')) return;
+  switch (e.code) {
+    case 'Escape':
+      closeModal();
+      break;
+    case 'ArrowLeft':
+      prevImg();
+      break;
+    case 'ArrowRight':
+      nextImg();
+      break;
+  }
+}
